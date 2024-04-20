@@ -12,6 +12,8 @@ public class Main {
 
     static String EMAIL_PATTERN = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 
+    static String NAME_PATTERN = "^[a-zA-Z-]{3,}$";
+
     public static void main(String[] args) {
 
         run();
@@ -40,27 +42,48 @@ public class Main {
 
     static void registerNewClient() {
         System.out.println("Please provide client details.");
-        System.out.print("Email:");
 
-        String email = SCANNER.nextLine();
+        System.out.print("First name: ");
 
-        if (isEmailValid(email)) {
-            Client client = buildClient(email);
-            System.out.println("New client: " + client.firstName + " " + client.lastName + " (" + client.email + ")");
+        String firstName = SCANNER.nextLine();
+
+        if (isFirstNameValid(firstName)) {
+
+            System.out.print("Last name: ");
+
+            String lastName = SCANNER.nextLine();
+
+            if (isLastNameValid(lastName)) {
+
+                System.out.print("Email:");
+
+                String email = SCANNER.nextLine();
+
+                if (isEmailValid(email)) {
+                    Client client = buildClient(firstName, lastName, email);
+                    System.out.println("New client: " + client.firstName + " " + client.lastName + " (" + client.email + ")");
+                } else {
+
+                    System.out.println("Provided email is invalid.");
+                }
+
+            } else {
+                System.out.println("Provided last name is invalid.");
+            }
         } else {
-            System.out.println("Provided email is invalid.");
+            System.out.println("Provided first name is invalid.");
         }
+
+
     }
 
-     static Client buildClient(String email) {
+     static Client buildClient(String firstName, String lastName, String email) {
         Client client = new Client();
         client.email = email;
 
-         System.out.print("First name: ");
-         client.firstName = SCANNER.nextLine();
+        client.firstName = firstName;
 
-         System.out.print("Last name: ");
-         client.lastName = SCANNER.nextLine();
+        client.lastName = lastName;
 
          return client;
     }
@@ -70,5 +93,17 @@ public class Main {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
+    static boolean isFirstNameValid(String firstName) {
+        Pattern pattern = Pattern.compile(NAME_PATTERN);
+        Matcher matcher = pattern.matcher(firstName);
+        return matcher.matches();
+    }
+    static boolean isLastNameValid(String lastName) {
+        Pattern pattern = Pattern.compile(NAME_PATTERN);
+        Matcher matcher = pattern.matcher(lastName);
+        return matcher.matches();
+    }
+
 
 }
