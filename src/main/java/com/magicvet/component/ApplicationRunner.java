@@ -26,6 +26,7 @@ public class ApplicationRunner {
                     client.setPet(pet);
                     pet.setOwnerName(client.getFirstName() + " " + client.getLastName());
                     System.out.println("Pet has been added.");
+                    System.out.println(pet);
                 } else {
                     System.out.println("Pet has not been added"); // Add the option of choosing an existing pet
                 }

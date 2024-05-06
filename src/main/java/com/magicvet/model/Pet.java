@@ -3,14 +3,20 @@ package main.java.com.magicvet.model;
 public class Pet {
 
     private String type;
-
     private String sex;
-
     private String age;
-
     private String name;
-
     private String ownerName;
+
+    @Override
+    public String toString() {
+        return "{" + "\n\tname = " + name
+                + "\n\ttype = " + type
+                + "\n\tsex = " + sex
+                + "\n\tage = " + age
+                + "\n\towner name = " + ownerName
+                + "\n}";
+    }
 
     public String getType() {
         return type;
