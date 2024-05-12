@@ -11,11 +11,11 @@ public class Client {
     @Override
     public String toString() {
         return "Client {"
-                + "\n\tfirstName = " + firstName
+                + "firstName = " + firstName
                 + ", lastName = " + lastName
                 + ", email = " + email
-                + ",\n\tpet = " + pet
-                + "\n}";
+                + ", pet = " + pet
+                + "}";
     }
 
     @Override

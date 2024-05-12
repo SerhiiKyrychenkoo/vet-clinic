@@ -9,11 +9,13 @@ public class Dog extends Pet {
     public static final String XL = "XL";
 
     private String size;
+    private String age;
 
     public Dog() { }
 
-    public Dog(String size) {
+    public Dog(String size, String age) {
         this.size = size;
+        this.age = age;
     }
 
     @Override
@@ -32,5 +34,15 @@ public class Dog extends Pet {
 
     public void setSize(String size) {
         this.size = size;
+    }
+
+    @Override
+    public String getAge() {
+        return age;
+    }
+
+    @Override
+    public void setAge(String age) {
+        this.age = age;
     }
 }
