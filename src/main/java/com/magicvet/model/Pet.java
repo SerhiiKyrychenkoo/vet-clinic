@@ -10,12 +10,12 @@ public abstract class Pet {
 
     @Override
     public String toString() {
-        return "{" + "\n\tname = " + name
-                + "\n\ttype = " + type
-                + "\n\tsex = " + sex
-                + "\n\tage = " + age
-                + "\n\towner name = " + ownerName
-                + "\n}";
+        return "{name = " + name
+                + " type = " + type
+                + " sex = " + sex
+                + " age = " + age
+                + " owner name = " + ownerName
+                + "}";
     }
 
     public String getType() {

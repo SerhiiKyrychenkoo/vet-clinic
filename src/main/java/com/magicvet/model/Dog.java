@@ -2,19 +2,31 @@ package main.java.com.magicvet.model;
 
 public class Dog extends Pet {
 
+    public static final String XS = "XS";
+    public static final String S = "S";
+    public static final String M = "M";
+    public static final String L = "L";
+    public static final String XL = "XL";
+
     private String size;
+
+    public Dog() { }
+
+    public Dog(String size) {
+        this.size = size;
+    }
 
     @Override
     public String toString() {
-        return "{" + "\n\tname = " + getName()
-                + "\n\ttype = " + getType()
-                + "\n\tsex = " + getSex()
-                + "\n\tage = " + getAge()
-                + "\n\towner name = " + getOwnerName()
-                + "\n}";
+        return "{name = " + getName()
+                + " type = " + getType()
+                + " sex = " + getSex()
+                + " age = " + getAge()
+                + " owner name = " + getOwnerName()
+                + "}";
      }
 
-    public String getSize(String size) {
+    public String getSize() {
         return size;
     }
 
