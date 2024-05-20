@@ -34,6 +34,10 @@ public class PetService {
         System.out.print("Name: ");
         pet.setName(Main.SCANNER.nextLine());
 
+        System.out.print("Health status (GOOD / SICK / CRITICAL): ");
+        String healthStatus = Main.SCANNER.nextLine();
+        pet.setHealthStatus(Pet.HealthStatus.valueOf(healthStatus));
+
         System.out.print("Sex (male / female): ");
         pet.setSex(Main.SCANNER.nextLine());
 
