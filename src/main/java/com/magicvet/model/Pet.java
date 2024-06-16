@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Pet {
 
-    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
+    static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
 
     private String type;
     private String sex;
@@ -23,12 +23,13 @@ public class Pet {
 
     @Override
     public String toString() {
-        return "{name = " + name
+        return "Pet {"
                 + " type = " + type
-                + " sex = " + sex
-                + " age = " + age
-                + " owner name = " + ownerName
-                + " registration date = " + registrationDate.format(FORMATTER)
+                + ", name = " + name
+                + ", sex = " + sex
+                + ", age = " + age
+                + ", owner name = " + ownerName
+                + ", registration date = " + registrationDate.format(FORMATTER)
                 + "}";
     }
 
@@ -77,6 +78,10 @@ public class Pet {
 
     public void setHealthStatus(HealthStatus healthStatus) {
         this.healthStatus = healthStatus;
+    }
+
+    public LocalDateTime getRegistrationDate() {
+        return registrationDate;
     }
 
     public enum HealthStatus {
